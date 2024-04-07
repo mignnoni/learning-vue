@@ -4,6 +4,15 @@ import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router';
 import Test from './components/Test.vue';
 import HelloWorld from './components/HelloWorld.vue';
+import { createStore } from 'vuex';
+
+const store = createStore({
+    state() {
+        return {
+            counter: 0
+        }
+    }
+});
 
 const router = createRouter({
     history: createWebHistory(),
@@ -22,5 +31,7 @@ const router = createRouter({
 const app = createApp(App);
 
 app.use(router);
+
+app.use(store);
 
 app.mount('#app');
