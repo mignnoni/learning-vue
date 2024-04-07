@@ -17,9 +17,10 @@ const getData = () => {
 
 const count = computed(() => store.state.counter);
 
-const increment = () => {
-    store.state.counter++;
-}
+const incrementFromStore = () => store.commit({
+    type: 'increment',
+    value: 'test'
+});
 
 getData();
 
@@ -31,7 +32,7 @@ getData();
         <p>
             {{ count }}
         </p>
-        <button @click="increment">
+        <button @click="incrementFromStore">
 f
         </button>
     </div>

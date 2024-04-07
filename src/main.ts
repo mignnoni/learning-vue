@@ -11,6 +11,12 @@ const store = createStore({
         return {
             counter: 0
         }
+    },
+    mutations: {
+        increment(state: any, payload: any) {
+            state.counter++;
+            console.log(payload.value);
+        }
     }
 });
 
