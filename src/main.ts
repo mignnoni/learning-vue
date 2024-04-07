@@ -17,6 +17,11 @@ const store = createStore({
             state.counter++;
             console.log(payload.value);
         }
+    },
+    getters: {
+        counter(state: any) {
+            return state.counter;
+        }
     }
 });
 

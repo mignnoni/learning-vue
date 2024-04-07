@@ -15,7 +15,7 @@ const getData = () => {
     })
 }
 
-const count = computed(() => store.state.counter);
+const count = computed(() => store.getters.counter);
 
 const incrementFromStore = () => store.commit({
     type: 'increment',
