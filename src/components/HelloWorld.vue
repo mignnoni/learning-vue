@@ -17,8 +17,8 @@ const getData = () => {
 
 const count = computed(() => store.getters.counter);
 
-const incrementFromStore = () => store.commit({
-    type: 'increment',
+const incrementFromStore = () => store.dispatch({
+    type: 'incrementAsync',
     value: 'test'
 });
 

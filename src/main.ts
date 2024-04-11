@@ -22,6 +22,13 @@ const store = createStore({
         counter(state: any) {
             return state.counter;
         }
+    },
+    actions: {
+        incrementAsync(context: any, payload: any) {
+            setTimeout(() => {
+                context.commit('increment', payload);
+            }, 2000);
+        }
     }
 });
 
