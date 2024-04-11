@@ -1,4 +1,5 @@
 <template>
+    <h1>Olá {{ user.name }}</h1>
     <h2>Teste</h2>
     <Prop :msg="message" />
     <button @click="navigate"></button>
@@ -7,6 +8,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Prop from './Prop.vue';
+import { mapGetters } from 'vuex';
     export default defineComponent({
         components: {
             Prop,
@@ -20,6 +22,9 @@ import Prop from './Prop.vue';
             return {
                 message: 'Hello World'
             }
+        },
+        computed: {
+            ...mapGetters(['user'])
         }
     })
 </script>
