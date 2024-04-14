@@ -16,12 +16,7 @@ const router = createRouter({
         {
             path: '/test',
             component: Test,
-            beforeEnter: () => {
-                const { getters } = useStore();
-
-                if (!getters.isAuth)
-                    return { path: '' }
-            }
+            beforeEnter: () => authCheck()
         },
         {
             path: '/admin',
@@ -31,9 +26,18 @@ const router = createRouter({
                     'path': '/admin/members',
                     component: Members
                 }
-            ]
+            ],
+            beforeEnter: () => authCheck()
         }
     ]
 });
+
+const authCheck = () => {
+
+    const { getters } = useStore();
+
+    if (!getters.isAuth)
+        return { path: '' }
+}
 
 export default router;

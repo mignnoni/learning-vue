@@ -6,7 +6,7 @@
         <section id="header" class="w-full bg-gray-700 py-4 flex justify-center items-center">
             <h3 class="font-bold text-3xl text-white">Vue Manager</h3>
         </section>
-        <main class="flex items-center justify-center pt-6 max-w-7xl">
+        <main class="pt-6 max-w-7xl mx-auto">
             <RouterView />
         </main>
     </section>
